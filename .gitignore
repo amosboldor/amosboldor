@@ -1,0 +1,7 @@
+# JetBrains IDE WebStorm
+.idea
+
+# NPM Dependency directory
+node_modules
+
+dist
