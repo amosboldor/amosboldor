@@ -8,8 +8,8 @@ interface NavLinkProps {
 }
 function PopNavLink(props: NavLinkProps) {
     return (
-        <li>
-            <NavLink to={props.to} className="block px-3 py-2 rounded-md text-sm font-medium">
+        <li className="bg-slate-700 px-3 rounded-lg">
+            <NavLink to={props.to} className="block py-2">
                 <Popover.Button as="span" className="block">{props.name}</Popover.Button>
             </NavLink>
         </li>
@@ -21,39 +21,33 @@ function DNavLink(props: NavLinkProps) {
 
 export default function Nav() {
     return (
-        <div className="flex flex-row justify-end">
-            <nav className="hidden md:block">
-                <ul className="flex items-center">
-                    <DNavLink to="/about" name="About"></DNavLink>
-                    <DNavLink to="/skills" name="Skills"></DNavLink>
-                    <DNavLink to="/projects" name="Projects"></DNavLink>
-                    <DNavLink to="/contact" name="Contact"></DNavLink>
-                </ul>
-            </nav>
-            <Popover className="md:hidden">
-                <Popover.Button>
-                    <span className="sr-only">Navigation</span>
-                    <Bars4Icon className="h-6 w-6" aria-hidden="true"></Bars4Icon>
+        <nav className="p-7">
+            <ul className="sm:flex justify-center md:justify-end hidden">
+                <DNavLink to="/about" name="About"></DNavLink>
+                <DNavLink to="/skills" name="Skills"></DNavLink>
+                <DNavLink to="/projects" name="Projects"></DNavLink>
+                <DNavLink to="/contact" name="Contact"></DNavLink>
+            </ul>
+            <Popover className="flex flex-row-reverse sm:hidden text-white">
+                <Popover.Button className="relative z-10 bg-blue-600 p-1 rounded-lg">
+                    {(props)=> (props.open ? (<>
+                        <span className="sr-only">Close navigation</span>
+                        <XMarkIcon className="block h-8 w-8" aria-hidden="true" />
+                    </>) : (<>
+                        <span className="sr-only">Navigation</span>
+                        <Bars4Icon className="block h-8 w-8" aria-hidden="true" />
+                    </>))}
                 </Popover.Button>
                 <Popover.Overlay className="fixed inset-0 backdrop-blur-sm bg-white/30" />
-                <Popover.Panel className="fixed inset-x-6 top-4 bg-blue-500 rounded-lg">
-                    <div className="flex flex-row items-center justify-between px-2 pt-2">
-                        <p>Pick Your Poison</p>
-                        <Popover.Button>
-                            <span className="sr-only">Close navigation</span>
-                            <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
-                    </div>
-                    <nav>
-                        <ul className="flex flex-col space-y-1 py-1">
-                            <PopNavLink to="/about" name="About"></PopNavLink>
-                            <PopNavLink to="/skills" name="Skills"></PopNavLink>
-                            <PopNavLink to="/projects" name="Projects"></PopNavLink>
-                            <PopNavLink to="/contact" name="Contact"></PopNavLink>
-                        </ul>
-                    </nav>
+                <Popover.Panel className="fixed inset-x-6 top-20 bg-slate-900 rounded-lg p-2 sm:hidden">
+                    <ul className="flex flex-col space-y-2">
+                        <PopNavLink to="/about" name="About"></PopNavLink>
+                        <PopNavLink to="/skills" name="Skills"></PopNavLink>
+                        <PopNavLink to="/projects" name="Projects"></PopNavLink>
+                        <PopNavLink to="/contact" name="Contact"></PopNavLink>
+                    </ul>
                 </Popover.Panel>
             </Popover>
-        </div>
+        </nav>
     );
 }
