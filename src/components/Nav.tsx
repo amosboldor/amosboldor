@@ -22,7 +22,7 @@ function DNavLink(props: NavLinkProps) {
 export default function Nav() {
     return (
         <nav className="p-7">
-            <ul className="sm:flex justify-center md:justify-end hidden">
+            <ul className="sm:flex justify-center lg:justify-end hidden">
                 <DNavLink to="/about" name="About"></DNavLink>
                 <DNavLink to="/skills" name="Skills"></DNavLink>
                 <DNavLink to="/projects" name="Projects"></DNavLink>
