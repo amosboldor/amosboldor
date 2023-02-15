@@ -24,7 +24,7 @@ export default function Nav() {
         <nav className="p-7">
             <ul className="sm:flex justify-center lg:justify-end hidden">
                 <DNavLink to="/about" name="About"></DNavLink>
-                <DNavLink to="/skills" name="Skills"></DNavLink>
+                <DNavLink to="/capabilities" name="Capabilities"></DNavLink>
                 <DNavLink to="/projects" name="Projects"></DNavLink>
                 <DNavLink to="/contact" name="Contact"></DNavLink>
             </ul>
@@ -42,7 +42,7 @@ export default function Nav() {
                 <Popover.Panel className="fixed inset-x-6 top-20 bg-slate-900 rounded-lg p-2 sm:hidden">
                     <ul className="flex flex-col space-y-2">
                         <PopNavLink to="/about" name="About"></PopNavLink>
-                        <PopNavLink to="/skills" name="Skills"></PopNavLink>
+                        <PopNavLink to="/capabilities" name="Capabilities"></PopNavLink>
                         <PopNavLink to="/projects" name="Projects"></PopNavLink>
                         <PopNavLink to="/contact" name="Contact"></PopNavLink>
                     </ul>

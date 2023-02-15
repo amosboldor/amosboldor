@@ -8,7 +8,7 @@ import Root from './routes/root'
 import Home from './routes/home'
 import About from './routes/about'
 import Projects from './routes/projects'
-import Skills from './routes/skills'
+import Capabilities from './routes/capabilities'
 import Contact from './routes/contact'
 import ErrorPage from './error-page'
 import './index.css'
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
                 element: <About />
             },
             {
-                path: '/skills',
-                element: <Skills />
+                path: '/capabilities',
+                element: <Capabilities />
             },
             {
                 path: '/projects',
