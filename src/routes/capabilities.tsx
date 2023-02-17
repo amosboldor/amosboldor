@@ -1,10 +1,7 @@
-import skills from "../skills";
-import SkillCard from "../components/SkillCard";
+import SkillCards from "../components/SkillCards";
 
 export default function capabilities() {
-    return <div className='grid place-content-center'>
-        <ul>
-            {skills.map((skill)=><SkillCard key={skill.name} skill={skill} />)}
-        </ul>
+    return <div className="container mx-auto sm:px-6 lg:px-8">
+        <SkillCards />
     </div>
 }
