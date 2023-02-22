@@ -2,6 +2,13 @@ import {Skill} from "../models";
 import SkillDialog from "./SkillDialog";
 import {useState} from "react";
 
+const proficiencyColors = {
+    'Novice': 'text-orange-100 bg-orange-500',
+    'Intermediate': 'text-yellow-100 bg-yellow-500',
+    'Advanced': 'text-lime-100 bg-lime-500',
+    'Expert': 'text-blue-100 bg-blue-500'
+}
+
 
 export default function SkillCard({ skill }: { skill: Skill }): JSX.Element {
     let [isOpen, setIsOpen] = useState(false);
@@ -13,7 +20,9 @@ export default function SkillCard({ skill }: { skill: Skill }): JSX.Element {
             <img width="30" height="30" src={skill.logo} alt="logo" />
             <div className="inline-flex flex-col">
                 <h3 className="text-md font-medium text-black">{skill.name}</h3>
-                <p className="mx-auto text-lime-100 bg-lime-500 rounded-md px-1 text-xs min-w-0">{skill.proficiency}</p>
+                <p className={
+                    'mx-auto rounded-md px-1 text-xs min-w-0 ' + proficiencyColors[skill.proficiency]
+                }>{skill.proficiency}</p>
             </div>
             <SkillDialog skill={skill} isOpen={isOpen} setIsOpen={setIsOpen} />
         </li>
