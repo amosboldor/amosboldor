@@ -1,7 +1,8 @@
-export default function Home() {
-  return (
-    <main className="text-center">
-      <h1>Hello World</h1>
-    </main>
-  )
+import Header from "./header"
+
+export default function Page() {
+  return (<>
+    <Header />
+    <main></main>
+  </>)
 }

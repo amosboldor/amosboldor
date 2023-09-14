@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Overpass } from 'next/font/google'
+import { Noto_Sans_Symbols } from 'next/font/google'
 
-const overpass = Overpass({ subsets: ['latin'] })
+const noto_sans_symbols = Noto_Sans_Symbols({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hello World',
+  title: 'Amos Boldor',
 }
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={overpass.className}>{children}</body>
+      <body className={`${noto_sans_symbols.className} min-h-screen min-w-screen px-6 py-12 bg-gradient-to-br from-slate-950 via-cyan-950 to-cyan-900`}>{children}</body>
     </html>
   )
 }
